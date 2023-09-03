@@ -1,0 +1,428 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"16 02-MCAL/01-DIO/MDIO_PROGRAM.c
+[c E39 0 1 2 3 4 5 .. ]
+[n E39 . GP0 GP1 GP2 GP3 GP4 GP5  ]
+[c E47 0 1 .. ]
+[n E47 . MDIO_OUTPUT MDIO_INPUT  ]
+[c E16 0 1 2 3 .. ]
+[n E16 . E_OK E_NOT_OK E_PENDING E_NULL_POINTER  ]
+"56 01-LIB\LSTD_TYPES.h
+[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2 . B0 B1 B2 B3 B4 B5 B6 B7 ]
+"53
+[u S1 `Vuc 1 `S2 1 ]
+[n S1 . All_REG BIT ]
+"11 02-MCAL/01-DIO/MDIO_INTERFACE.h
+[p x FOSC  =  INTOSCIO   ]
+"12
+[p x WDTE  =  OFF        ]
+"13
+[p x PWRTE  =  ON        ]
+"14
+[p x MCLRE  =  ON        ]
+"15
+[p x CP  =  OFF          ]
+"16
+[p x IOSCFS  =  8MHZ     ]
+"17
+[p x BOREN  =  OFF       ]
+"16 02-MCAL/01-DIO/MDIO_PROGRAM.c
+[v _MDIO_stderrSetPinDirection `(E16 ~T0 @X0 1 ef2`E39`E47 ]
+"21
+{
+[e :U _MDIO_stderrSetPinDirection ]
+"18
+[v _ARG_udtPin `E39 ~T0 @X0 1 r1 ]
+"19
+[v _ARG_Mode `E47 ~T0 @X0 1 r2 ]
+"21
+[f ]
+"22
+[v _L_stderrorError `E16 ~T0 @X0 1 a ]
+[e = _L_stderrorError . `E16 1 ]
+"23
+[e $ ! == -> _ARG_Mode `ui -> . `E47 1 `ui 4  ]
+"24
+{
+"25
+[e $U 6  ]
+"26
+{
+"27
+[e :U 7 ]
+[e =| . *U -> -> 133 `i `*S1 0 -> << -> 1 `i -> . `E39 0 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 5  ]
+"28
+[e :U 8 ]
+[e =| . *U -> -> 133 `i `*S1 0 -> << -> 1 `i -> . `E39 1 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 5  ]
+"29
+[e :U 9 ]
+[e =| . *U -> -> 133 `i `*S1 0 -> << -> 1 `i -> . `E39 2 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 5  ]
+"30
+[e :U 10 ]
+[e =| . *U -> -> 133 `i `*S1 0 -> << -> 1 `i -> . `E39 3 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 5  ]
+"31
+[e :U 11 ]
+[e =| . *U -> -> 133 `i `*S1 0 -> << -> 1 `i -> . `E39 4 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 5  ]
+"32
+[e :U 12 ]
+[e =| . *U -> -> 133 `i `*S1 0 -> << -> 1 `i -> . `E39 5 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 5  ]
+"33
+[e :U 13 ]
+[e = _L_stderrorError . `E16 1 ]
+[e $U 5  ]
+"34
+}
+[e $U 5  ]
+[e :U 6 ]
+[e [\ -> _ARG_udtPin `ui , $ -> . `E39 0 `ui 7
+ , $ -> . `E39 1 `ui 8
+ , $ -> . `E39 2 `ui 9
+ , $ -> . `E39 3 `ui 10
+ , $ -> . `E39 4 `ui 11
+ , $ -> . `E39 5 `ui 12
+ 13 ]
+[e :U 5 ]
+"35
+}
+[e $U 14  ]
+"36
+[e :U 4 ]
+[e $ ! == -> _ARG_Mode `ui -> . `E47 0 `ui 15  ]
+"37
+{
+"38
+[e $U 17  ]
+"39
+{
+"40
+[e :U 18 ]
+[e =& . *U -> -> 133 `i `*S1 0 -> ~ << -> 1 `i -> . `E39 0 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 16  ]
+"41
+[e :U 19 ]
+[e =& . *U -> -> 133 `i `*S1 0 -> ~ << -> 1 `i -> . `E39 1 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 16  ]
+"42
+[e :U 20 ]
+[e =& . *U -> -> 133 `i `*S1 0 -> ~ << -> 1 `i -> . `E39 2 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 16  ]
+"43
+[e :U 21 ]
+[e =& . *U -> -> 133 `i `*S1 0 -> ~ << -> 1 `i -> . `E39 4 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 16  ]
+"44
+[e :U 22 ]
+[e =& . *U -> -> 133 `i `*S1 0 -> ~ << -> 1 `i -> . `E39 5 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 16  ]
+"45
+[e :U 23 ]
+[e = _L_stderrorError . `E16 1 ]
+[e $U 16  ]
+"46
+}
+[e $U 16  ]
+[e :U 17 ]
+[e [\ -> _ARG_udtPin `ui , $ -> . `E39 0 `ui 18
+ , $ -> . `E39 1 `ui 19
+ , $ -> . `E39 2 `ui 20
+ , $ -> . `E39 4 `ui 21
+ , $ -> . `E39 5 `ui 22
+ 23 ]
+[e :U 16 ]
+"47
+}
+[e :U 15 ]
+[e :U 14 ]
+"49
+[e ) _L_stderrorError ]
+[e $UE 3  ]
+"51
+[e :UE 3 ]
+}
+"53
+[v _MDIO_stderrSetPinValue `(E16 ~T0 @X0 1 ef2`E39`uc ]
+"58
+{
+[e :U _MDIO_stderrSetPinValue ]
+"55
+[v _ARG_udtPin `E39 ~T0 @X0 1 r1 ]
+"56
+[v _ARG_u8Value `uc ~T0 @X0 1 r2 ]
+"58
+[f ]
+"60
+[v _L_stderrorError `E16 ~T0 @X0 1 a ]
+[e = _L_stderrorError . `E16 1 ]
+"62
+[e $ ! == -> _ARG_u8Value `i -> 2 `i 25  ]
+"63
+{
+"64
+[e $U 27  ]
+"65
+{
+"66
+[e :U 28 ]
+[e =| . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 0 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 26  ]
+"67
+[e :U 29 ]
+[e =| . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 1 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 26  ]
+"68
+[e :U 30 ]
+[e =| . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 2 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 26  ]
+"69
+[e :U 31 ]
+[e =| . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 4 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 26  ]
+"70
+[e :U 32 ]
+[e =| . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 5 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 26  ]
+"71
+[e :U 33 ]
+[e = _L_stderrorError . `E16 1 ]
+[e $U 26  ]
+"72
+}
+[e $U 26  ]
+[e :U 27 ]
+[e [\ -> _ARG_udtPin `ui , $ -> . `E39 0 `ui 28
+ , $ -> . `E39 1 `ui 29
+ , $ -> . `E39 2 `ui 30
+ , $ -> . `E39 4 `ui 31
+ , $ -> . `E39 5 `ui 32
+ 33 ]
+[e :U 26 ]
+"73
+}
+[e $U 34  ]
+"74
+[e :U 25 ]
+[e $ ! == -> _ARG_u8Value `i -> 1 `i 35  ]
+"75
+{
+"77
+[e $U 37  ]
+"78
+{
+"79
+[e :U 38 ]
+[e =& . *U -> -> 5 `i `*S1 0 -> ~ << -> 1 `i -> . `E39 0 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 36  ]
+"80
+[e :U 39 ]
+[e =& . *U -> -> 5 `i `*S1 0 -> ~ << -> 1 `i -> . `E39 1 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 36  ]
+"81
+[e :U 40 ]
+[e =& . *U -> -> 5 `i `*S1 0 -> ~ << -> 1 `i -> . `E39 2 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 36  ]
+"82
+[e :U 41 ]
+[e =& . *U -> -> 5 `i `*S1 0 -> ~ << -> 1 `i -> . `E39 4 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 36  ]
+"83
+[e :U 42 ]
+[e =& . *U -> -> 5 `i `*S1 0 -> ~ << -> 1 `i -> . `E39 5 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 36  ]
+"84
+[e :U 43 ]
+[e = _L_stderrorError . `E16 1 ]
+[e $U 36  ]
+"85
+}
+[e $U 36  ]
+[e :U 37 ]
+[e [\ -> _ARG_udtPin `ui , $ -> . `E39 0 `ui 38
+ , $ -> . `E39 1 `ui 39
+ , $ -> . `E39 2 `ui 40
+ , $ -> . `E39 4 `ui 41
+ , $ -> . `E39 5 `ui 42
+ 43 ]
+[e :U 36 ]
+"88
+}
+[e :U 35 ]
+[e :U 34 ]
+"89
+[e ) _L_stderrorError ]
+[e $UE 24  ]
+"90
+[e :UE 24 ]
+}
+"92
+[v _MDIO_stderrGetPinValue `(E16 ~T0 @X0 1 ef2`E39`*uc ]
+"97
+{
+[e :U _MDIO_stderrGetPinValue ]
+"94
+[v _ARG_udtPin `E39 ~T0 @X0 1 r1 ]
+"95
+[v _ARG_u8Value `*uc ~T0 @X0 1 r2 ]
+"97
+[f ]
+"98
+[v _L_stderrorError `E16 ~T0 @X0 1 a ]
+[e = _L_stderrorError . `E16 1 ]
+"100
+[e $ ! != _ARG_u8Value -> -> -> 0 `i `*v `*uc 45  ]
+"101
+{
+"103
+[e $U 47  ]
+"104
+{
+"105
+[e :U 48 ]
+[e = *U _ARG_u8Value =^ . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 0 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 46  ]
+"106
+[e :U 49 ]
+[e = *U _ARG_u8Value =^ . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 1 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 46  ]
+"107
+[e :U 50 ]
+[e = *U _ARG_u8Value =^ . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 2 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 46  ]
+"108
+[e :U 51 ]
+[e = *U _ARG_u8Value =^ . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 4 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 46  ]
+"109
+[e :U 52 ]
+[e = *U _ARG_u8Value =^ . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 5 `i `Vuc ]
+[e = _L_stderrorError . `E16 0 ]
+[e $U 46  ]
+"110
+[e :U 53 ]
+[e = _L_stderrorError . `E16 1 ]
+[e $U 46  ]
+"111
+}
+[e $U 46  ]
+[e :U 47 ]
+[e [\ -> _ARG_udtPin `ui , $ -> . `E39 0 `ui 48
+ , $ -> . `E39 1 `ui 49
+ , $ -> . `E39 2 `ui 50
+ , $ -> . `E39 4 `ui 51
+ , $ -> . `E39 5 `ui 52
+ 53 ]
+[e :U 46 ]
+"113
+}
+[e $U 54  ]
+"114
+[e :U 45 ]
+"115
+{
+"117
+[e = _L_stderrorError . `E16 3 ]
+"119
+}
+[e :U 54 ]
+"122
+[e ) _L_stderrorError ]
+[e $UE 44  ]
+"123
+[e :UE 44 ]
+}
+"127
+[v _MDIO_voidSetPortDirection `(v ~T0 @X0 1 ef1`uc ]
+"131
+{
+[e :U _MDIO_voidSetPortDirection ]
+"129
+[v _ARG_u8Value `uc ~T0 @X0 1 r1 ]
+"131
+[f ]
+"132
+[e = . *U -> -> 133 `i `*S1 0 _ARG_u8Value ]
+"133
+[e = . *U -> -> 5 `i `*S1 0 -> -> 0 `i `uc ]
+"134
+[e :UE 55 ]
+}
+"136
+[v _MDIO_voidSetPortValue `(v ~T0 @X0 1 ef1`uc ]
+"140
+{
+[e :U _MDIO_voidSetPortValue ]
+"138
+[v _ARG_u8Value `uc ~T0 @X0 1 r1 ]
+"140
+[f ]
+"141
+[e = . *U -> -> 5 `i `*S1 0 _ARG_u8Value ]
+"142
+[e :UE 56 ]
+}
+"144
+[v _MDIO_stderrGetPortValue `(E16 ~T0 @X0 1 ef1`*uc ]
+"148
+{
+[e :U _MDIO_stderrGetPortValue ]
+"146
+[v _ARG_u8Value `*uc ~T0 @X0 1 r1 ]
+"148
+[f ]
+"149
+[v _L_stderrorError `E16 ~T0 @X0 1 a ]
+[e = _L_stderrorError . `E16 1 ]
+"151
+[e $ ! != _ARG_u8Value -> -> -> 0 `i `*v `*uc 58  ]
+"152
+{
+"154
+[e = *U _ARG_u8Value =^ . *U -> -> 5 `i `*S1 0 -> << -> 1 `i -> . `E39 0 `i `Vuc ]
+"156
+}
+[e $U 59  ]
+"157
+[e :U 58 ]
+"158
+{
+"159
+[e = _L_stderrorError . `E16 3 ]
+"160
+}
+[e :U 59 ]
+"162
+[e ) _L_stderrorError ]
+[e $UE 57  ]
+"163
+[e :UE 57 ]
+}

@@ -1,0 +1,6 @@
+build/default/production/05-APP/APP.p1:  \
+05-APP/APP.c  \
+01-LIB/LSTD_TYPES.h  \
+01-LIB/LBIT_MATH.h  \
+02-MCAL/01-DIO/MDIO_INTERFACE.h  \
+02-MCAL/04-ADC/MADC_INTERFACE.h 

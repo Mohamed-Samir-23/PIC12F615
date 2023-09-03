@@ -1,0 +1,113 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"13 02-MCAL/04-ADC\MADC_INTERFACE.h
+[v _MADC_voidDisableAllADC `(v ~T0 @X0 0 ef ]
+"31 05-APP/APP.c
+[c E74 0 1 2 3 4 5 .. ]
+[n E74 . GP0 GP1 GP2 GP3 GP4 GP5  ]
+[c E82 0 1 .. ]
+[n E82 . MDIO_OUTPUT MDIO_INPUT  ]
+[c E16 0 1 2 3 .. ]
+[n E16 . E_OK E_NOT_OK E_PENDING E_NULL_POINTER  ]
+"48 02-MCAL/01-DIO\MDIO_INTERFACE.h
+[v _MDIO_stderrSetPinDirection `(E16 ~T0 @X0 0 ef2`E74`E82 ]
+"54
+[v _MDIO_stderrSetPinValue `(E16 ~T0 @X0 0 ef2`E74`uc ]
+"72
+[v _MDIO_voidSetPortValue `(v ~T0 @X0 0 ef1`uc ]
+[v F69 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC10-12Fxxx_DFP/1.6.174/xc8\pic\include\builtins.h
+[v __delay `JF69 ~T0 @X0 0 e ]
+[p i __delay ]
+"11 02-MCAL/01-DIO\MDIO_INTERFACE.h
+[p x FOSC  =  INTOSCIO   ]
+"12
+[p x WDTE  =  OFF        ]
+"13
+[p x PWRTE  =  ON        ]
+"14
+[p x MCLRE  =  ON        ]
+"15
+[p x CP  =  OFF          ]
+"16
+[p x IOSCFS  =  8MHZ     ]
+"17
+[p x BOREN  =  OFF       ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"27 05-APP/APP.c
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"29
+[e ( _MADC_voidDisableAllADC ..  ]
+"31
+[e ( _MDIO_stderrSetPinDirection (2 , . `E74 0 . `E82 0 ]
+"32
+[e ( _MDIO_stderrSetPinDirection (2 , . `E74 1 . `E82 0 ]
+"33
+[e ( _MDIO_stderrSetPinDirection (2 , . `E74 2 . `E82 0 ]
+"34
+[e ( _MDIO_stderrSetPinDirection (2 , . `E74 4 . `E82 0 ]
+"35
+[e ( _MDIO_stderrSetPinDirection (2 , . `E74 5 . `E82 0 ]
+"37
+[e ( _MDIO_stderrSetPinValue (2 , . `E74 0 -> -> 1 `i `uc ]
+"38
+[e ( _MDIO_stderrSetPinValue (2 , . `E74 1 -> -> 1 `i `uc ]
+"39
+[e ( _MDIO_stderrSetPinValue (2 , . `E74 2 -> -> 1 `i `uc ]
+"40
+[e ( _MDIO_stderrSetPinValue (2 , . `E74 4 -> -> 1 `i `uc ]
+"41
+[e ( _MDIO_stderrSetPinValue (2 , . `E74 5 -> -> 1 `i `uc ]
+"44
+[e :U 5 ]
+"45
+{
+"47
+[e ( _MDIO_voidSetPortValue (1 -> -> 1 `i `uc ]
+"48
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"49
+[e ( _MDIO_voidSetPortValue (1 -> | -> 1 `i -> 2 `i `uc ]
+"50
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"51
+[e ( _MDIO_voidSetPortValue (1 -> | | -> 1 `i -> 2 `i -> 4 `i `uc ]
+"52
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"53
+[e ( _MDIO_voidSetPortValue (1 -> | | | -> 1 `i -> 2 `i -> 4 `i -> 16 `i `uc ]
+"54
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"55
+[e ( _MDIO_voidSetPortValue (1 -> | | | | -> 1 `i -> 2 `i -> 4 `i -> 16 `i -> 32 `i `uc ]
+"56
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"57
+[e ( _MDIO_voidSetPortValue (1 -> | | | -> 2 `i -> 4 `i -> 16 `i -> 32 `i `uc ]
+"58
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"59
+[e ( _MDIO_voidSetPortValue (1 -> | | -> 4 `i -> 16 `i -> 32 `i `uc ]
+"60
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"61
+[e ( _MDIO_voidSetPortValue (1 -> | -> 16 `i -> 32 `i `uc ]
+"62
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"63
+[e ( _MDIO_voidSetPortValue (1 -> -> 32 `i `uc ]
+"64
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"65
+}
+[e :U 4 ]
+[e $U 5  ]
+[e :U 6 ]
+"67
+[e $UE 3  ]
+"68
+[e :UE 3 ]
+}

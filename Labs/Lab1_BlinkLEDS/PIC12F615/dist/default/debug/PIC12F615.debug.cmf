@@ -1,0 +1,324 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/debug\PIC12F615.debug.o
+cinit CODE 0 2FE 2FE 2 2 1
+text1 CODE 0 195 195 6B 2 1
+text2 CODE 0 200 200 70 2 1
+text3 CODE 0 187 187 3 2 1
+text4 CODE 0 18A 18A B 2 1
+maintext CODE 0 270 270 8E 2 1
+cstackCOMMON COMMON 1 71 71 7 1 1
+config CONFIG 4 2007 2007 1 2 1
+$C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+reset_vec CODE 0 0 0 1 2 1
+end_init CODE 0 1 1 1 2 1
+config CONFIG 4 2007 2007 1 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 40-64 1
+BANK0 40-64 1
+CONST 2-186 2
+ENTRY 2-186 2
+IDLOC 2000-2003 2
+CODE 2-186 2
+SFR0 0-3F 1
+SFR1 80-F0 1
+COMMON 78-7D 1
+STRCODE 2-186 2
+STRING 2-186 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/debug\PIC12F615.debug.o
+2FE cinit CODE >111:C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_1.s
+2FE cinit CODE >114:C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_1.s
+2FE cinit CODE >120:C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_1.s
+2FE cinit CODE >122:C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_1.s
+2FF cinit CODE >123:C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_1.s
+18A text4 CODE >114:G:\driver\PIC12F615\05-APP/APP.c
+18B text4 CODE >120:G:\driver\PIC12F615\05-APP/APP.c
+18E text4 CODE >121:G:\driver\PIC12F615\05-APP/APP.c
+191 text4 CODE >122:G:\driver\PIC12F615\05-APP/APP.c
+194 text4 CODE >124:G:\driver\PIC12F615\05-APP/APP.c
+187 text3 CODE >28:G:\driver\PIC12F615\02-MCAL/04-ADC/MADC_PROGRAM.c
+187 text3 CODE >30:G:\driver\PIC12F615\02-MCAL/04-ADC/MADC_PROGRAM.c
+189 text3 CODE >31:G:\driver\PIC12F615\02-MCAL/04-ADC/MADC_PROGRAM.c
+200 text2 CODE >16:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+200 text2 CODE >18:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+201 text2 CODE >23:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+205 text2 CODE >27:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+208 text2 CODE >28:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+20B text2 CODE >29:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+20E text2 CODE >30:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+211 text2 CODE >31:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+214 text2 CODE >32:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+217 text2 CODE >33:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+218 text2 CODE >34:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+21D text2 CODE >34:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+222 text2 CODE >34:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+225 text2 CODE >34:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+228 text2 CODE >34:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+22B text2 CODE >34:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+22E text2 CODE >34:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+231 text2 CODE >34:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+234 text2 CODE >36:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+238 text2 CODE >40:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+23E text2 CODE >41:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+244 text2 CODE >42:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+24A text2 CODE >43:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+250 text2 CODE >44:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+256 text2 CODE >46:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+25B text2 CODE >46:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+260 text2 CODE >46:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+263 text2 CODE >46:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+266 text2 CODE >46:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+269 text2 CODE >46:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+26C text2 CODE >46:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+26F text2 CODE >51:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+195 text1 CODE >53:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+195 text1 CODE >55:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+196 text1 CODE >62:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+19B text1 CODE >66:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+19E text1 CODE >67:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1A1 text1 CODE >68:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1A4 text1 CODE >69:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1A7 text1 CODE >70:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1AA text1 CODE >71:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1AB text1 CODE >72:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1B0 text1 CODE >72:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1B5 text1 CODE >72:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1B8 text1 CODE >72:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1BB text1 CODE >72:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1BE text1 CODE >72:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1C1 text1 CODE >72:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1C4 text1 CODE >74:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1C8 text1 CODE >79:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1CE text1 CODE >80:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1D4 text1 CODE >81:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1DA text1 CODE >82:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1E0 text1 CODE >83:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1E6 text1 CODE >85:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1EB text1 CODE >85:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1F0 text1 CODE >85:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1F3 text1 CODE >85:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1F6 text1 CODE >85:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1F9 text1 CODE >85:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1FC text1 CODE >85:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+1FF text1 CODE >90:G:\driver\PIC12F615\02-MCAL/01-DIO/MDIO_PROGRAM.c
+270 maintext CODE >51:G:\driver\PIC12F615\05-APP/APP.c
+270 maintext CODE >53:G:\driver\PIC12F615\05-APP/APP.c
+271 maintext CODE >54:G:\driver\PIC12F615\05-APP/APP.c
+273 maintext CODE >55:G:\driver\PIC12F615\05-APP/APP.c
+274 maintext CODE >56:G:\driver\PIC12F615\05-APP/APP.c
+276 maintext CODE >57:G:\driver\PIC12F615\05-APP/APP.c
+278 maintext CODE >58:G:\driver\PIC12F615\05-APP/APP.c
+27A maintext CODE >59:G:\driver\PIC12F615\05-APP/APP.c
+27B maintext CODE >60:G:\driver\PIC12F615\05-APP/APP.c
+27D maintext CODE >61:G:\driver\PIC12F615\05-APP/APP.c
+27E maintext CODE >63:G:\driver\PIC12F615\05-APP/APP.c
+281 maintext CODE >64:G:\driver\PIC12F615\05-APP/APP.c
+284 maintext CODE >65:G:\driver\PIC12F615\05-APP/APP.c
+287 maintext CODE >66:G:\driver\PIC12F615\05-APP/APP.c
+28A maintext CODE >67:G:\driver\PIC12F615\05-APP/APP.c
+28D maintext CODE >69:G:\driver\PIC12F615\05-APP/APP.c
+291 maintext CODE >70:G:\driver\PIC12F615\05-APP/APP.c
+295 maintext CODE >71:G:\driver\PIC12F615\05-APP/APP.c
+299 maintext CODE >72:G:\driver\PIC12F615\05-APP/APP.c
+29D maintext CODE >73:G:\driver\PIC12F615\05-APP/APP.c
+2A1 maintext CODE >78:G:\driver\PIC12F615\05-APP/APP.c
+2A2 maintext CODE >79:G:\driver\PIC12F615\05-APP/APP.c
+2A4 maintext CODE >80:G:\driver\PIC12F615\05-APP/APP.c
+2A5 maintext CODE >81:G:\driver\PIC12F615\05-APP/APP.c
+2A7 maintext CODE >82:G:\driver\PIC12F615\05-APP/APP.c
+2A9 maintext CODE >84:G:\driver\PIC12F615\05-APP/APP.c
+2AC maintext CODE >85:G:\driver\PIC12F615\05-APP/APP.c
+2B0 maintext CODE >86:G:\driver\PIC12F615\05-APP/APP.c
+2BD maintext CODE >87:G:\driver\PIC12F615\05-APP/APP.c
+2C0 maintext CODE >88:G:\driver\PIC12F615\05-APP/APP.c
+2CD maintext CODE >89:G:\driver\PIC12F615\05-APP/APP.c
+2D0 maintext CODE >90:G:\driver\PIC12F615\05-APP/APP.c
+2DD maintext CODE >91:G:\driver\PIC12F615\05-APP/APP.c
+2E0 maintext CODE >92:G:\driver\PIC12F615\05-APP/APP.c
+2ED maintext CODE >93:G:\driver\PIC12F615\05-APP/APP.c
+2F0 maintext CODE >94:G:\driver\PIC12F615\05-APP/APP.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 0 0 ABS 0 - dist/default/debug\PIC12F615.debug.o
+__Hspace_0 300 0 ABS 0 - -
+__Hspace_1 78 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 400F 0 ABS 0 - -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__L__absolute__ 0 0 ABS 0 __absolute__ -
+__Hstrings 0 0 ABS 0 strings -
+___sp 0 0 STACK 2 stack C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+_main 4E0 0 CODE 0 maintext dist/default/debug\PIC12F615.debug.o
+btemp 7E 0 ABS 0 - dist/default/debug\PIC12F615.debug.o
+start 2 0 CODE 0 init C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+__Hpowerup 0 0 CODE 0 powerup -
+intlevel0 0 0 ENTRY 0 functab C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+DIO_Write@u8_masked_pins 73 0 COMMON 1 cstackCOMMON dist/default/debug\PIC12F615.debug.o
+wtemp0 7E 0 ABS 0 - dist/default/debug\PIC12F615.debug.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+__Lmaintext 0 0 ABS 0 maintext -
+DIO_Write@u8_temp_reg 72 0 COMMON 1 cstackCOMMON dist/default/debug\PIC12F615.debug.o
+__end_of_MDIO_stderrSetPinDirection 4E0 0 CODE 0 text2 dist/default/debug\PIC12F615.debug.o
+___stackhi 0 0 ABS 0 - C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+___stacklo 0 0 ABS 0 - C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+start_initialization 5FC 0 CODE 0 cinit dist/default/debug\PIC12F615.debug.o
+MDIO_stderrSetPinDirection@ARG_Mode 71 0 COMMON 1 cstackCOMMON dist/default/debug\PIC12F615.debug.o
+_MADC_voidDisableAllADC 30E 0 CODE 0 text3 dist/default/debug\PIC12F615.debug.o
+___int_sp 0 0 STACK 2 stack C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 BANK1 1 bank1 -
+__Hcinit 600 0 CODE 0 cinit -
+__Hstack 0 0 STACK 2 stack -
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 4 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 BANK1 1 bank1 -
+__Lcinit 5FC 0 CODE 0 cinit -
+__Lstack 0 0 STACK 2 stack -
+DIO_Write@value 71 0 COMMON 1 cstackCOMMON dist/default/debug\PIC12F615.debug.o
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 2 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 2 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Ltext 0 0 ABS 0 text -
+MDIO_stderrSetPinDirection@ARG_udtPin 74 0 COMMON 1 cstackCOMMON dist/default/debug\PIC12F615.debug.o
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__S0 300 0 ABS 0 - -
+__S1 78 0 ABS 0 - -
+_MDIO_stderrSetPinValue 32A 0 CODE 0 text1 dist/default/debug\PIC12F615.debug.o
+__Lintentry 2 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\moham\AppData\Local\Temp\xcAsof0.\driver_tmp_9.o
+MDIO_stderrSetPinValue@ARG_udtPin 74 0 COMMON 1 cstackCOMMON dist/default/debug\PIC12F615.debug.o
+__end_of_DIO_Write 32A 0 CODE 0 text4 dist/default/debug\PIC12F615.debug.o
+__pmaintext 4E0 0 CODE 0 maintext dist/default/debug\PIC12F615.debug.o
+MDIO_stderrSetPinValue@ARG_u8Value 71 0 COMMON 1 cstackCOMMON dist/default/debug\PIC12F615.debug.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 4 config -
+_MDIO_stderrSetPinDirection 400 0 CODE 0 text2 dist/default/debug\PIC12F615.debug.o
+_DIO_Write 314 0 CODE 0 text4 dist/default/debug\PIC12F615.debug.o
+__end_of_MADC_voidDisableAllADC 314 0 CODE 0 text3 dist/default/debug\PIC12F615.debug.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__Lend_init 2 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization 5FC 0 CODE 0 cinit dist/default/debug\PIC12F615.debug.o
+__Hintentry 2 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__ptext1 32A 0 CODE 0 text1 dist/default/debug\PIC12F615.debug.o
+__ptext2 400 0 CODE 0 text2 dist/default/debug\PIC12F615.debug.o
+__ptext3 30E 0 CODE 0 text3 dist/default/debug\PIC12F615.debug.o
+__ptext4 314 0 CODE 0 text4 dist/default/debug\PIC12F615.debug.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__end_of_MDIO_stderrSetPinValue 400 0 CODE 0 text1 dist/default/debug\PIC12F615.debug.o
+__H__absolute__ 0 0 ABS 0 __absolute__ -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__end_of__initialization 5FC 0 CODE 0 cinit dist/default/debug\PIC12F615.debug.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__Lclrtext 0 0 ABS 0 clrtext -
+__pcstackCOMMON 71 0 COMMON 1 cstackCOMMON dist/default/debug\PIC12F615.debug.o
+__Hend_init 4 0 CODE 0 end_init -
+__end_of_main 5FC 0 CODE 0 maintext dist/default/debug\PIC12F615.debug.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__initialization 5FC 0 CODE 0 cinit dist/default/debug\PIC12F615.debug.o
+DIO_Write@pins 74 0 COMMON 1 cstackCOMMON dist/default/debug\PIC12F615.debug.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 2FE 5FC 2 2
+text1 0 195 32A 6B 2
+text2 0 200 400 70 2
+text3 0 187 30E 3 2
+text4 0 18A 314 B 2
+maintext 0 270 4E0 8E 2
+cstackCOMMON 1 71 71 7 1
+reset_vec 0 0 0 2 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

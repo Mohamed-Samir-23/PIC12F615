@@ -1,0 +1,983 @@
+
+
+Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
+                                                                                               Sun Sep 03 03:52:09 2023
+
+Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og9 
+     1                           	processor	12F615
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     6                           	psect	maintext,global,class=CODE,split=1,delta=2
+     7                           	psect	text1,local,class=CODE,merge=1,delta=2
+     8                           	psect	text2,local,class=CODE,merge=1,delta=2
+     9                           	psect	text3,local,class=CODE,merge=1,delta=2
+    10                           	psect	text4,local,class=CODE,merge=1,delta=2
+    11                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    12                           	dabs	1,0x7E,2
+    13     0000                     
+    14                           ; Generated 21/04/2023 GMT
+    15                           ; 
+    16                           ; Copyright © 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    17                           ; All rights reserved.
+    18                           ; 
+    19                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    20                           ; 
+    21                           ; Redistribution and use in source and binary forms, with or without modification, are
+    22                           ; permitted provided that the following conditions are met:
+    23                           ; 
+    24                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    25                           ;        conditions and the following disclaimer.
+    26                           ; 
+    27                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    28                           ;        of conditions and the following disclaimer in the documentation and/or other
+    29                           ;        materials provided with the distribution. Publication is not required when
+    30                           ;        this file is used in an embedded application.
+    31                           ; 
+    32                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    33                           ;        software without specific prior written permission.
+    34                           ; 
+    35                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    36                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    37                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    38                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    39                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    40                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    41                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    42                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    43                           ; 
+    44                           ; 
+    45                           ; Code-generator required, PIC12F615 Definitions
+    46                           ; 
+    47                           ; SFR Addresses
+    48     0000                     
+    49                           	psect	cinit
+    50     02FE                     start_initialization:	
+    51                           ; #config settings
+    52                           
+    53     02FE                     __initialization:
+    54     02FE                     end_of_initialization:	
+    55                           ;End of C runtime variable initialization code
+    56                           
+    57     02FE                     __end_of__initialization:
+    58     02FE  0183               	clrf	3
+    59     02FF  2A70               	ljmp	_main	;jump to C main() function
+    60                           
+    61                           	psect	cstackCOMMON
+    62     0071                     __pcstackCOMMON:
+    63     0071                     ?_MADC_voidDisableAllADC:
+    64     0071                     ??_MADC_voidDisableAllADC:	
+    65                           ; 1 bytes @ 0x0
+    66                           
+    67     0071                     ?_DIO_Write:	
+    68                           ; 1 bytes @ 0x0
+    69                           
+    70     0071                     ?_MDIO_stderrSetPinDirection:	
+    71                           ; 1 bytes @ 0x0
+    72                           
+    73     0071                     ?_MDIO_stderrSetPinValue:	
+    74                           ; 1 bytes @ 0x0
+    75                           
+    76     0071                     ?_main:	
+    77                           ; 1 bytes @ 0x0
+    78                           
+    79     0071                     MDIO_stderrSetPinDirection@ARG_Mode:	
+    80                           ; 1 bytes @ 0x0
+    81                           
+    82     0071                     MDIO_stderrSetPinValue@ARG_u8Value:	
+    83                           ; 1 bytes @ 0x0
+    84                           
+    85     0071                     DIO_Write@value:	
+    86                           ; 1 bytes @ 0x0
+    87                           
+    88                           
+    89                           ; 1 bytes @ 0x0
+    90     0071                     	ds	1
+    91     0072                     ??_DIO_Write:
+    92     0072                     ??_MDIO_stderrSetPinDirection:	
+    93                           ; 1 bytes @ 0x1
+    94                           
+    95     0072                     ??_MDIO_stderrSetPinValue:	
+    96                           ; 1 bytes @ 0x1
+    97                           
+    98     0072                     DIO_Write@u8_temp_reg:	
+    99                           ; 1 bytes @ 0x1
+   100                           
+   101                           
+   102                           ; 1 bytes @ 0x1
+   103     0072                     	ds	1
+   104     0073                     DIO_Write@u8_masked_pins:
+   105                           
+   106                           ; 1 bytes @ 0x2
+   107     0073                     	ds	1
+   108     0074                     MDIO_stderrSetPinDirection@ARG_udtPin:
+   109     0074                     MDIO_stderrSetPinValue@ARG_udtPin:	
+   110                           ; 1 bytes @ 0x3
+   111                           
+   112     0074                     DIO_Write@pins:	
+   113                           ; 1 bytes @ 0x3
+   114                           
+   115                           
+   116                           ; 1 bytes @ 0x3
+   117     0074                     	ds	1
+   118     0075                     ??_main:
+   119                           
+   120                           ; 1 bytes @ 0x4
+   121     0075                     	ds	3
+   122                           
+   123                           	psect	maintext
+   124     0270                     __pmaintext:	
+   125 ;;
+   126 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   127 ;;
+   128 ;; *************** function _main *****************
+   129 ;; Defined at:
+   130 ;;		line 51 in file "05-APP/APP.c"
+   131 ;; Parameters:    Size  Location     Type
+   132 ;;		None
+   133 ;; Auto vars:     Size  Location     Type
+   134 ;;		None
+   135 ;; Return value:  Size  Location     Type
+   136 ;;                  1    wreg      void 
+   137 ;; Registers used:
+   138 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   139 ;; Tracked objects:
+   140 ;;		On entry : B00/0
+   141 ;;		On exit  : 0/0
+   142 ;;		Unchanged: 0/0
+   143 ;; Data sizes:     COMMON   BANK0
+   144 ;;      Params:         0       0
+   145 ;;      Locals:         0       0
+   146 ;;      Temps:          3       0
+   147 ;;      Totals:         3       0
+   148 ;;Total ram usage:        3 bytes
+   149 ;; Hardware stack levels required when called: 1
+   150 ;; This function calls:
+   151 ;;		_DIO_Write
+   152 ;;		_MADC_voidDisableAllADC
+   153 ;;		_MDIO_stderrSetPinDirection
+   154 ;;		_MDIO_stderrSetPinValue
+   155 ;; This function is called by:
+   156 ;;		Startup code after reset
+   157 ;; This function uses a non-reentrant model
+   158 ;;
+   159                           
+   160     0270                     _main:	
+   161                           ;psect for function _main
+   162                           
+   163                           
+   164                           ;incstack = 0
+   165                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   166     0270  2187               	fcall	_MADC_voidDisableAllADC
+   167     0271  1283               	bcf	3,5	;RP0=0, select bank0
+   168     0272  019A               	clrf	26	;volatile
+   169     0273  019F               	clrf	31	;volatile
+   170     0274  1683               	bsf	3,5	;RP0=1, select bank1
+   171     0275  018C               	clrf	12	;volatile
+   172     0276  3001               	movlw	1
+   173     0277  0093               	movwf	19	;volatile
+   174     0278  1283               	bcf	3,5	;RP0=0, select bank0
+   175     0279  0195               	clrf	21	;volatile
+   176     027A  0192               	clrf	18	;volatile
+   177     027B  1683               	bsf	3,5	;RP0=1, select bank1
+   178     027C  0196               	clrf	22	;volatile
+   179     027D  0195               	clrf	21	;volatile
+   180     027E  01F1               	clrf	MDIO_stderrSetPinDirection@ARG_Mode
+   181     027F  3000               	movlw	0
+   182     0280  2200               	fcall	_MDIO_stderrSetPinDirection
+   183     0281  01F1               	clrf	MDIO_stderrSetPinDirection@ARG_Mode
+   184     0282  3001               	movlw	1
+   185     0283  2200               	fcall	_MDIO_stderrSetPinDirection
+   186     0284  01F1               	clrf	MDIO_stderrSetPinDirection@ARG_Mode
+   187     0285  3002               	movlw	2
+   188     0286  2200               	fcall	_MDIO_stderrSetPinDirection
+   189     0287  01F1               	clrf	MDIO_stderrSetPinDirection@ARG_Mode
+   190     0288  3004               	movlw	4
+   191     0289  2200               	fcall	_MDIO_stderrSetPinDirection
+   192     028A  01F1               	clrf	MDIO_stderrSetPinDirection@ARG_Mode
+   193     028B  3005               	movlw	5
+   194     028C  2200               	fcall	_MDIO_stderrSetPinDirection
+   195     028D  01F1               	clrf	MDIO_stderrSetPinValue@ARG_u8Value
+   196     028E  0AF1               	incf	MDIO_stderrSetPinValue@ARG_u8Value,f
+   197     028F  3000               	movlw	0
+   198     0290  2195               	fcall	_MDIO_stderrSetPinValue
+   199     0291  01F1               	clrf	MDIO_stderrSetPinValue@ARG_u8Value
+   200     0292  0AF1               	incf	MDIO_stderrSetPinValue@ARG_u8Value,f
+   201     0293  3001               	movlw	1
+   202     0294  2195               	fcall	_MDIO_stderrSetPinValue
+   203     0295  01F1               	clrf	MDIO_stderrSetPinValue@ARG_u8Value
+   204     0296  0AF1               	incf	MDIO_stderrSetPinValue@ARG_u8Value,f
+   205     0297  3002               	movlw	2
+   206     0298  2195               	fcall	_MDIO_stderrSetPinValue
+   207     0299  01F1               	clrf	MDIO_stderrSetPinValue@ARG_u8Value
+   208     029A  0AF1               	incf	MDIO_stderrSetPinValue@ARG_u8Value,f
+   209     029B  3004               	movlw	4
+   210     029C  2195               	fcall	_MDIO_stderrSetPinValue
+   211     029D  01F1               	clrf	MDIO_stderrSetPinValue@ARG_u8Value
+   212     029E  0AF1               	incf	MDIO_stderrSetPinValue@ARG_u8Value,f
+   213     029F  3005               	movlw	5
+   214     02A0  2195               	fcall	_MDIO_stderrSetPinValue
+   215     02A1                     l1069:
+   216     02A1  2187               	fcall	_MADC_voidDisableAllADC
+   217     02A2  1283               	bcf	3,5	;RP0=0, select bank0
+   218     02A3  019A               	clrf	26	;volatile
+   219     02A4  019F               	clrf	31	;volatile
+   220     02A5  1683               	bsf	3,5	;RP0=1, select bank1
+   221     02A6  018C               	clrf	12	;volatile
+   222     02A7  3001               	movlw	1
+   223     02A8  0093               	movwf	19	;volatile
+   224     02A9  3001               	movlw	1
+   225     02AA  1283               	bcf	3,5	;RP0=0, select bank0
+   226     02AB  0085               	movwf	5	;volatile
+   227     02AC  30FF               	movlw	255
+   228     02AD  00F1               	movwf	DIO_Write@value
+   229     02AE  3001               	movlw	1
+   230     02AF  218A               	fcall	_DIO_Write
+   231     02B0  300B               	movlw	11
+   232     02B1  00F7               	movwf	??_main+2
+   233     02B2  3026               	movlw	38
+   234     02B3  00F6               	movwf	??_main+1
+   235     02B4  305D               	movlw	93
+   236     02B5  00F5               	movwf	??_main
+   237     02B6                     u97:
+   238     02B6  0BF5               	decfsz	??_main,f
+   239     02B7  2AB6               	goto	u97
+   240     02B8  0BF6               	decfsz	??_main+1,f
+   241     02B9  2AB6               	goto	u97
+   242     02BA  0BF7               	decfsz	??_main+2,f
+   243     02BB  2AB6               	goto	u97
+   244     02BC  2ABD               	nop2
+   245     02BD  3003               	movlw	3
+   246     02BE  1283               	bcf	3,5	;RP0=0, select bank0
+   247     02BF  0085               	movwf	5	;volatile
+   248     02C0  300B               	movlw	11
+   249     02C1  00F7               	movwf	??_main+2
+   250     02C2  3026               	movlw	38
+   251     02C3  00F6               	movwf	??_main+1
+   252     02C4  305D               	movlw	93
+   253     02C5  00F5               	movwf	??_main
+   254     02C6                     u107:
+   255     02C6  0BF5               	decfsz	??_main,f
+   256     02C7  2AC6               	goto	u107
+   257     02C8  0BF6               	decfsz	??_main+1,f
+   258     02C9  2AC6               	goto	u107
+   259     02CA  0BF7               	decfsz	??_main+2,f
+   260     02CB  2AC6               	goto	u107
+   261     02CC  2ACD               	nop2
+   262     02CD  3007               	movlw	7
+   263     02CE  1283               	bcf	3,5	;RP0=0, select bank0
+   264     02CF  0085               	movwf	5	;volatile
+   265     02D0  3015               	movlw	21
+   266     02D1  00F7               	movwf	??_main+2
+   267     02D2  304B               	movlw	75
+   268     02D3  00F6               	movwf	??_main+1
+   269     02D4  30BE               	movlw	190
+   270     02D5  00F5               	movwf	??_main
+   271     02D6                     u117:
+   272     02D6  0BF5               	decfsz	??_main,f
+   273     02D7  2AD6               	goto	u117
+   274     02D8  0BF6               	decfsz	??_main+1,f
+   275     02D9  2AD6               	goto	u117
+   276     02DA  0BF7               	decfsz	??_main+2,f
+   277     02DB  2AD6               	goto	u117
+   278     02DC  0000               	nop
+   279     02DD  3017               	movlw	23
+   280     02DE  1283               	bcf	3,5	;RP0=0, select bank0
+   281     02DF  0085               	movwf	5	;volatile
+   282     02E0  300B               	movlw	11
+   283     02E1  00F7               	movwf	??_main+2
+   284     02E2  3026               	movlw	38
+   285     02E3  00F6               	movwf	??_main+1
+   286     02E4  305D               	movlw	93
+   287     02E5  00F5               	movwf	??_main
+   288     02E6                     u127:
+   289     02E6  0BF5               	decfsz	??_main,f
+   290     02E7  2AE6               	goto	u127
+   291     02E8  0BF6               	decfsz	??_main+1,f
+   292     02E9  2AE6               	goto	u127
+   293     02EA  0BF7               	decfsz	??_main+2,f
+   294     02EB  2AE6               	goto	u127
+   295     02EC  2AED               	nop2
+   296     02ED  3037               	movlw	55
+   297     02EE  1283               	bcf	3,5	;RP0=0, select bank0
+   298     02EF  0085               	movwf	5	;volatile
+   299     02F0  300B               	movlw	11
+   300     02F1  00F7               	movwf	??_main+2
+   301     02F2  3026               	movlw	38
+   302     02F3  00F6               	movwf	??_main+1
+   303     02F4  305D               	movlw	93
+   304     02F5  00F5               	movwf	??_main
+   305     02F6                     u137:
+   306     02F6  0BF5               	decfsz	??_main,f
+   307     02F7  2AF6               	goto	u137
+   308     02F8  0BF6               	decfsz	??_main+1,f
+   309     02F9  2AF6               	goto	u137
+   310     02FA  0BF7               	decfsz	??_main+2,f
+   311     02FB  2AF6               	goto	u137
+   312     02FC  2AFD               	nop2
+   313     02FD  2AA1               	goto	l1069
+   314     02FE                     __end_of_main:
+   315                           
+   316                           	psect	text1
+   317     0195                     __ptext1:	
+   318 ;; *************** function _MDIO_stderrSetPinValue *****************
+   319 ;; Defined at:
+   320 ;;		line 53 in file "02-MCAL/01-DIO/MDIO_PROGRAM.c"
+   321 ;; Parameters:    Size  Location     Type
+   322 ;;  ARG_udtPin      1    wreg     enum E39
+   323 ;;  ARG_u8Value     1    0[COMMON] unsigned char 
+   324 ;; Auto vars:     Size  Location     Type
+   325 ;;  ARG_udtPin      1    3[COMMON] enum E39
+   326 ;;  L_stderrorEr    1    0        enum E16
+   327 ;; Return value:  Size  Location     Type
+   328 ;;                  1    wreg      enum E16
+   329 ;; Registers used:
+   330 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1
+   331 ;; Tracked objects:
+   332 ;;		On entry : 0/100
+   333 ;;		On exit  : 0/0
+   334 ;;		Unchanged: 0/0
+   335 ;; Data sizes:     COMMON   BANK0
+   336 ;;      Params:         1       0
+   337 ;;      Locals:         1       0
+   338 ;;      Temps:          2       0
+   339 ;;      Totals:         4       0
+   340 ;;Total ram usage:        4 bytes
+   341 ;; Hardware stack levels used: 1
+   342 ;; This function calls:
+   343 ;;		Nothing
+   344 ;; This function is called by:
+   345 ;;		_main
+   346 ;; This function uses a non-reentrant model
+   347 ;;
+   348                           
+   349     0195                     _MDIO_stderrSetPinValue:	
+   350                           ;psect for function _MDIO_stderrSetPinValue
+   351                           
+   352                           
+   353                           ;incstack = 0
+   354                           ; Regs used in _MDIO_stderrSetPinValue: [wreg-fsr0h+status,2+status,0+btemp+1]
+   355     0195  00F4               	movwf	MDIO_stderrSetPinValue@ARG_udtPin
+   356     0196  3002               	movlw	2
+   357     0197  0671               	xorwf	MDIO_stderrSetPinValue@ARG_u8Value,w
+   358     0198  1903               	btfsc	3,2
+   359     0199  29AB               	goto	l987
+   360     019A  29C4               	goto	l989
+   361     019B                     l28:
+   362     019B  1283               	bcf	3,5	;RP0=0, select bank0
+   363     019C  1405               	bsf	5,0	;volatile
+   364     019D  0008               	return
+   365     019E                     l30:
+   366     019E  1283               	bcf	3,5	;RP0=0, select bank0
+   367     019F  1485               	bsf	5,1	;volatile
+   368     01A0  0008               	return
+   369     01A1                     l31:
+   370     01A1  1283               	bcf	3,5	;RP0=0, select bank0
+   371     01A2  1505               	bsf	5,2	;volatile
+   372     01A3  0008               	return
+   373     01A4                     l32:
+   374     01A4  1283               	bcf	3,5	;RP0=0, select bank0
+   375     01A5  1605               	bsf	5,4	;volatile
+   376     01A6  0008               	return
+   377     01A7                     l33:
+   378     01A7  1283               	bcf	3,5	;RP0=0, select bank0
+   379     01A8  1685               	bsf	5,5	;volatile
+   380     01A9  0008               	return
+   381     01AA                     l34:
+   382     01AA  0008               	return
+   383     01AB                     l987:
+   384     01AB  0874               	movf	MDIO_stderrSetPinValue@ARG_udtPin,w
+   385     01AC  00F2               	movwf	??_MDIO_stderrSetPinValue
+   386     01AD  01F3               	clrf	??_MDIO_stderrSetPinValue+1
+   387                           
+   388                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+   389                           ; Switch size 1, requested type "simple"
+   390                           ; Number of cases is 1, Range of values is 0 to 0
+   391                           ; switch strategies available:
+   392                           ; Name         Instructions Cycles
+   393                           ; simple_byte            4     3 (average)
+   394                           ; direct_byte            7     6 (fixed)
+   395                           ; jumptable            260     6 (fixed)
+   396                           ;	Chosen strategy is simple_byte
+   397     01AE  0873               	movf	??_MDIO_stderrSetPinValue+1,w
+   398     01AF  3A00               	xorlw	0	; case 0
+   399     01B0  1903               	skipnz
+   400     01B1  29B3               	goto	l1217
+   401     01B2  29AA               	goto	l34
+   402     01B3                     l1217:
+   403                           
+   404                           ; Switch size 1, requested type "simple"
+   405                           ; Number of cases is 5, Range of values is 0 to 5
+   406                           ; switch strategies available:
+   407                           ; Name         Instructions Cycles
+   408                           ; direct_byte           12     6 (fixed)
+   409                           ; simple_byte           16     9 (average)
+   410                           ; jumptable            260     6 (fixed)
+   411                           ;	Chosen strategy is simple_byte
+   412     01B3  0872               	movf	??_MDIO_stderrSetPinValue,w
+   413     01B4  3A00               	xorlw	0	; case 0
+   414     01B5  1903               	skipnz
+   415     01B6  299B               	goto	l28
+   416     01B7  3A01               	xorlw	1	; case 1
+   417     01B8  1903               	skipnz
+   418     01B9  299E               	goto	l30
+   419     01BA  3A03               	xorlw	3	; case 2
+   420     01BB  1903               	skipnz
+   421     01BC  29A1               	goto	l31
+   422     01BD  3A06               	xorlw	6	; case 4
+   423     01BE  1903               	skipnz
+   424     01BF  29A4               	goto	l32
+   425     01C0  3A01               	xorlw	1	; case 5
+   426     01C1  1903               	skipnz
+   427     01C2  29A7               	goto	l33
+   428     01C3  29AA               	goto	l34
+   429     01C4                     l989:
+   430     01C4  0371               	decf	MDIO_stderrSetPinValue@ARG_u8Value,w
+   431     01C5  1D03               	btfss	3,2
+   432     01C6  0008               	return
+   433     01C7  29E6               	goto	l1015
+   434     01C8                     l993:
+   435     01C8  30FE               	movlw	254
+   436     01C9  00FF               	movwf	127
+   437     01CA  087F               	movf	127,w
+   438     01CB  1283               	bcf	3,5	;RP0=0, select bank0
+   439     01CC  0585               	andwf	5,f	;volatile
+   440     01CD  0008               	return
+   441     01CE                     l997:
+   442     01CE  30FD               	movlw	253
+   443     01CF  00FF               	movwf	127
+   444     01D0  087F               	movf	127,w
+   445     01D1  1283               	bcf	3,5	;RP0=0, select bank0
+   446     01D2  0585               	andwf	5,f	;volatile
+   447     01D3  0008               	return
+   448     01D4                     l1001:
+   449     01D4  30FB               	movlw	251
+   450     01D5  00FF               	movwf	127
+   451     01D6  087F               	movf	127,w
+   452     01D7  1283               	bcf	3,5	;RP0=0, select bank0
+   453     01D8  0585               	andwf	5,f	;volatile
+   454     01D9  0008               	return
+   455     01DA                     l1005:
+   456     01DA  30EF               	movlw	239
+   457     01DB  00FF               	movwf	127
+   458     01DC  087F               	movf	127,w
+   459     01DD  1283               	bcf	3,5	;RP0=0, select bank0
+   460     01DE  0585               	andwf	5,f	;volatile
+   461     01DF  0008               	return
+   462     01E0                     l1009:
+   463     01E0  30DF               	movlw	223
+   464     01E1  00FF               	movwf	127
+   465     01E2  087F               	movf	127,w
+   466     01E3  1283               	bcf	3,5	;RP0=0, select bank0
+   467     01E4  0585               	andwf	5,f	;volatile
+   468     01E5  0008               	return
+   469     01E6                     l1015:
+   470     01E6  0874               	movf	MDIO_stderrSetPinValue@ARG_udtPin,w
+   471     01E7  00F2               	movwf	??_MDIO_stderrSetPinValue
+   472     01E8  01F3               	clrf	??_MDIO_stderrSetPinValue+1
+   473                           
+   474                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+   475                           ; Switch size 1, requested type "simple"
+   476                           ; Number of cases is 1, Range of values is 0 to 0
+   477                           ; switch strategies available:
+   478                           ; Name         Instructions Cycles
+   479                           ; simple_byte            4     3 (average)
+   480                           ; direct_byte            7     6 (fixed)
+   481                           ; jumptable            260     6 (fixed)
+   482                           ;	Chosen strategy is simple_byte
+   483     01E9  0873               	movf	??_MDIO_stderrSetPinValue+1,w
+   484     01EA  3A00               	xorlw	0	; case 0
+   485     01EB  1903               	skipnz
+   486     01EC  29EE               	goto	l1219
+   487     01ED  29AA               	goto	l34
+   488     01EE                     l1219:
+   489                           
+   490                           ; Switch size 1, requested type "simple"
+   491                           ; Number of cases is 5, Range of values is 0 to 5
+   492                           ; switch strategies available:
+   493                           ; Name         Instructions Cycles
+   494                           ; direct_byte           12     6 (fixed)
+   495                           ; simple_byte           16     9 (average)
+   496                           ; jumptable            260     6 (fixed)
+   497                           ;	Chosen strategy is simple_byte
+   498     01EE  0872               	movf	??_MDIO_stderrSetPinValue,w
+   499     01EF  3A00               	xorlw	0	; case 0
+   500     01F0  1903               	skipnz
+   501     01F1  29C8               	goto	l993
+   502     01F2  3A01               	xorlw	1	; case 1
+   503     01F3  1903               	skipnz
+   504     01F4  29CE               	goto	l997
+   505     01F5  3A03               	xorlw	3	; case 2
+   506     01F6  1903               	skipnz
+   507     01F7  29D4               	goto	l1001
+   508     01F8  3A06               	xorlw	6	; case 4
+   509     01F9  1903               	skipnz
+   510     01FA  29DA               	goto	l1005
+   511     01FB  3A01               	xorlw	1	; case 5
+   512     01FC  1903               	skipnz
+   513     01FD  29E0               	goto	l1009
+   514     01FE  29AA               	goto	l34
+   515     01FF  0008               	return
+   516     0200                     __end_of_MDIO_stderrSetPinValue:
+   517                           
+   518                           	psect	text2
+   519     0200                     __ptext2:	
+   520 ;; *************** function _MDIO_stderrSetPinDirection *****************
+   521 ;; Defined at:
+   522 ;;		line 16 in file "02-MCAL/01-DIO/MDIO_PROGRAM.c"
+   523 ;; Parameters:    Size  Location     Type
+   524 ;;  ARG_udtPin      1    wreg     enum E39
+   525 ;;  ARG_Mode        1    0[COMMON] enum E47
+   526 ;; Auto vars:     Size  Location     Type
+   527 ;;  ARG_udtPin      1    3[COMMON] enum E39
+   528 ;;  L_stderrorEr    1    0        enum E16
+   529 ;; Return value:  Size  Location     Type
+   530 ;;                  1    wreg      enum E16
+   531 ;; Registers used:
+   532 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1
+   533 ;; Tracked objects:
+   534 ;;		On entry : 0/100
+   535 ;;		On exit  : 0/0
+   536 ;;		Unchanged: 0/0
+   537 ;; Data sizes:     COMMON   BANK0
+   538 ;;      Params:         1       0
+   539 ;;      Locals:         1       0
+   540 ;;      Temps:          2       0
+   541 ;;      Totals:         4       0
+   542 ;;Total ram usage:        4 bytes
+   543 ;; Hardware stack levels used: 1
+   544 ;; This function calls:
+   545 ;;		Nothing
+   546 ;; This function is called by:
+   547 ;;		_main
+   548 ;; This function uses a non-reentrant model
+   549 ;;
+   550                           
+   551     0200                     _MDIO_stderrSetPinDirection:	
+   552                           ;psect for function _MDIO_stderrSetPinDirection
+   553                           
+   554                           
+   555                           ;incstack = 0
+   556                           ; Regs used in _MDIO_stderrSetPinDirection: [wreg-fsr0h+status,2+status,0+btemp+1]
+   557     0200  00F4               	movwf	MDIO_stderrSetPinDirection@ARG_udtPin
+   558     0201  0371               	decf	MDIO_stderrSetPinDirection@ARG_Mode,w
+   559     0202  1903               	btfsc	3,2
+   560     0203  2A18               	goto	l927
+   561     0204  2A34               	goto	l929
+   562     0205                     l5:
+   563     0205  1683               	bsf	3,5	;RP0=1, select bank1
+   564     0206  1405               	bsf	5,0	;volatile
+   565     0207  0008               	return
+   566     0208                     l7:
+   567     0208  1683               	bsf	3,5	;RP0=1, select bank1
+   568     0209  1485               	bsf	5,1	;volatile
+   569     020A  0008               	return
+   570     020B                     l8:
+   571     020B  1683               	bsf	3,5	;RP0=1, select bank1
+   572     020C  1505               	bsf	5,2	;volatile
+   573     020D  0008               	return
+   574     020E                     l9:
+   575     020E  1683               	bsf	3,5	;RP0=1, select bank1
+   576     020F  1585               	bsf	5,3	;volatile
+   577     0210  0008               	return
+   578     0211                     l10:
+   579     0211  1683               	bsf	3,5	;RP0=1, select bank1
+   580     0212  1605               	bsf	5,4	;volatile
+   581     0213  0008               	return
+   582     0214                     l11:
+   583     0214  1683               	bsf	3,5	;RP0=1, select bank1
+   584     0215  1685               	bsf	5,5	;volatile
+   585     0216  0008               	return
+   586     0217                     l12:
+   587     0217  0008               	return
+   588     0218                     l927:
+   589     0218  0874               	movf	MDIO_stderrSetPinDirection@ARG_udtPin,w
+   590     0219  00F2               	movwf	??_MDIO_stderrSetPinDirection
+   591     021A  01F3               	clrf	??_MDIO_stderrSetPinDirection+1
+   592                           
+   593                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+   594                           ; Switch size 1, requested type "simple"
+   595                           ; Number of cases is 1, Range of values is 0 to 0
+   596                           ; switch strategies available:
+   597                           ; Name         Instructions Cycles
+   598                           ; simple_byte            4     3 (average)
+   599                           ; direct_byte            7     6 (fixed)
+   600                           ; jumptable            260     6 (fixed)
+   601                           ;	Chosen strategy is simple_byte
+   602     021B  0873               	movf	??_MDIO_stderrSetPinDirection+1,w
+   603     021C  3A00               	xorlw	0	; case 0
+   604     021D  1903               	skipnz
+   605     021E  2A20               	goto	l1221
+   606     021F  2A17               	goto	l12
+   607     0220                     l1221:
+   608                           
+   609                           ; Switch size 1, requested type "simple"
+   610                           ; Number of cases is 6, Range of values is 0 to 5
+   611                           ; switch strategies available:
+   612                           ; Name         Instructions Cycles
+   613                           ; direct_byte           12     6 (fixed)
+   614                           ; simple_byte           19    10 (average)
+   615                           ; jumptable            260     6 (fixed)
+   616                           ;	Chosen strategy is simple_byte
+   617     0220  0872               	movf	??_MDIO_stderrSetPinDirection,w
+   618     0221  3A00               	xorlw	0	; case 0
+   619     0222  1903               	skipnz
+   620     0223  2A05               	goto	l5
+   621     0224  3A01               	xorlw	1	; case 1
+   622     0225  1903               	skipnz
+   623     0226  2A08               	goto	l7
+   624     0227  3A03               	xorlw	3	; case 2
+   625     0228  1903               	skipnz
+   626     0229  2A0B               	goto	l8
+   627     022A  3A01               	xorlw	1	; case 3
+   628     022B  1903               	skipnz
+   629     022C  2A0E               	goto	l9
+   630     022D  3A07               	xorlw	7	; case 4
+   631     022E  1903               	skipnz
+   632     022F  2A11               	goto	l10
+   633     0230  3A01               	xorlw	1	; case 5
+   634     0231  1903               	skipnz
+   635     0232  2A14               	goto	l11
+   636     0233  2A17               	goto	l12
+   637     0234                     l929:
+   638     0234  0871               	movf	MDIO_stderrSetPinDirection@ARG_Mode,w
+   639     0235  1D03               	btfss	3,2
+   640     0236  0008               	return
+   641     0237  2A56               	goto	l955
+   642     0238                     l933:
+   643     0238  30FE               	movlw	254
+   644     0239  00FF               	movwf	127
+   645     023A  087F               	movf	127,w
+   646     023B  1683               	bsf	3,5	;RP0=1, select bank1
+   647     023C  0585               	andwf	5,f	;volatile
+   648     023D  0008               	return
+   649     023E                     l937:
+   650     023E  30FD               	movlw	253
+   651     023F  00FF               	movwf	127
+   652     0240  087F               	movf	127,w
+   653     0241  1683               	bsf	3,5	;RP0=1, select bank1
+   654     0242  0585               	andwf	5,f	;volatile
+   655     0243  0008               	return
+   656     0244                     l941:
+   657     0244  30FB               	movlw	251
+   658     0245  00FF               	movwf	127
+   659     0246  087F               	movf	127,w
+   660     0247  1683               	bsf	3,5	;RP0=1, select bank1
+   661     0248  0585               	andwf	5,f	;volatile
+   662     0249  0008               	return
+   663     024A                     l945:
+   664     024A  30EF               	movlw	239
+   665     024B  00FF               	movwf	127
+   666     024C  087F               	movf	127,w
+   667     024D  1683               	bsf	3,5	;RP0=1, select bank1
+   668     024E  0585               	andwf	5,f	;volatile
+   669     024F  0008               	return
+   670     0250                     l949:
+   671     0250  30DF               	movlw	223
+   672     0251  00FF               	movwf	127
+   673     0252  087F               	movf	127,w
+   674     0253  1683               	bsf	3,5	;RP0=1, select bank1
+   675     0254  0585               	andwf	5,f	;volatile
+   676     0255  0008               	return
+   677     0256                     l955:
+   678     0256  0874               	movf	MDIO_stderrSetPinDirection@ARG_udtPin,w
+   679     0257  00F2               	movwf	??_MDIO_stderrSetPinDirection
+   680     0258  01F3               	clrf	??_MDIO_stderrSetPinDirection+1
+   681                           
+   682                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+   683                           ; Switch size 1, requested type "simple"
+   684                           ; Number of cases is 1, Range of values is 0 to 0
+   685                           ; switch strategies available:
+   686                           ; Name         Instructions Cycles
+   687                           ; simple_byte            4     3 (average)
+   688                           ; direct_byte            7     6 (fixed)
+   689                           ; jumptable            260     6 (fixed)
+   690                           ;	Chosen strategy is simple_byte
+   691     0259  0873               	movf	??_MDIO_stderrSetPinDirection+1,w
+   692     025A  3A00               	xorlw	0	; case 0
+   693     025B  1903               	skipnz
+   694     025C  2A5E               	goto	l1223
+   695     025D  2A17               	goto	l12
+   696     025E                     l1223:
+   697                           
+   698                           ; Switch size 1, requested type "simple"
+   699                           ; Number of cases is 5, Range of values is 0 to 5
+   700                           ; switch strategies available:
+   701                           ; Name         Instructions Cycles
+   702                           ; direct_byte           12     6 (fixed)
+   703                           ; simple_byte           16     9 (average)
+   704                           ; jumptable            260     6 (fixed)
+   705                           ;	Chosen strategy is simple_byte
+   706     025E  0872               	movf	??_MDIO_stderrSetPinDirection,w
+   707     025F  3A00               	xorlw	0	; case 0
+   708     0260  1903               	skipnz
+   709     0261  2A38               	goto	l933
+   710     0262  3A01               	xorlw	1	; case 1
+   711     0263  1903               	skipnz
+   712     0264  2A3E               	goto	l937
+   713     0265  3A03               	xorlw	3	; case 2
+   714     0266  1903               	skipnz
+   715     0267  2A44               	goto	l941
+   716     0268  3A06               	xorlw	6	; case 4
+   717     0269  1903               	skipnz
+   718     026A  2A4A               	goto	l945
+   719     026B  3A01               	xorlw	1	; case 5
+   720     026C  1903               	skipnz
+   721     026D  2A50               	goto	l949
+   722     026E  2A17               	goto	l12
+   723     026F  0008               	return
+   724     0270                     __end_of_MDIO_stderrSetPinDirection:
+   725                           
+   726                           	psect	text3
+   727     0187                     __ptext3:	
+   728 ;; *************** function _MADC_voidDisableAllADC *****************
+   729 ;; Defined at:
+   730 ;;		line 28 in file "02-MCAL/04-ADC/MADC_PROGRAM.c"
+   731 ;; Parameters:    Size  Location     Type
+   732 ;;		None
+   733 ;; Auto vars:     Size  Location     Type
+   734 ;;		None
+   735 ;; Return value:  Size  Location     Type
+   736 ;;                  1    wreg      void 
+   737 ;; Registers used:
+   738 ;;		status,2
+   739 ;; Tracked objects:
+   740 ;;		On entry : 0/0
+   741 ;;		On exit  : 100/100
+   742 ;;		Unchanged: 0/0
+   743 ;; Data sizes:     COMMON   BANK0
+   744 ;;      Params:         0       0
+   745 ;;      Locals:         0       0
+   746 ;;      Temps:          0       0
+   747 ;;      Totals:         0       0
+   748 ;;Total ram usage:        0 bytes
+   749 ;; Hardware stack levels used: 1
+   750 ;; This function calls:
+   751 ;;		Nothing
+   752 ;; This function is called by:
+   753 ;;		_main
+   754 ;; This function uses a non-reentrant model
+   755 ;;
+   756                           
+   757     0187                     _MADC_voidDisableAllADC:	
+   758                           ;psect for function _MADC_voidDisableAllADC
+   759                           
+   760                           
+   761                           ;incstack = 0
+   762                           ; Regs used in _MADC_voidDisableAllADC: [status,2]
+   763     0187  1683               	bsf	3,5	;RP0=1, select bank1
+   764     0188  019F               	clrf	31	;volatile
+   765     0189  0008               	return
+   766     018A                     __end_of_MADC_voidDisableAllADC:
+   767                           
+   768                           	psect	text4
+   769     018A                     __ptext4:	
+   770 ;; *************** function _DIO_Write *****************
+   771 ;; Defined at:
+   772 ;;		line 114 in file "05-APP/APP.c"
+   773 ;; Parameters:    Size  Location     Type
+   774 ;;  pins            1    wreg     unsigned char 
+   775 ;;  value           1    0[COMMON] unsigned char 
+   776 ;; Auto vars:     Size  Location     Type
+   777 ;;  pins            1    3[COMMON] unsigned char 
+   778 ;;  u8_masked_pi    1    2[COMMON] unsigned char 
+   779 ;;  u8_temp_reg     1    1[COMMON] unsigned char 
+   780 ;; Return value:  Size  Location     Type
+   781 ;;                  1    wreg      void 
+   782 ;; Registers used:
+   783 ;;		wreg, status,2, status,0
+   784 ;; Tracked objects:
+   785 ;;		On entry : 100/0
+   786 ;;		On exit  : 100/0
+   787 ;;		Unchanged: 0/0
+   788 ;; Data sizes:     COMMON   BANK0
+   789 ;;      Params:         1       0
+   790 ;;      Locals:         3       0
+   791 ;;      Temps:          0       0
+   792 ;;      Totals:         4       0
+   793 ;;Total ram usage:        4 bytes
+   794 ;; Hardware stack levels used: 1
+   795 ;; This function calls:
+   796 ;;		Nothing
+   797 ;; This function is called by:
+   798 ;;		_main
+   799 ;; This function uses a non-reentrant model
+   800 ;;
+   801                           
+   802     018A                     _DIO_Write:	
+   803                           ;psect for function _DIO_Write
+   804                           
+   805                           
+   806                           ;incstack = 0
+   807                           ; Regs used in _DIO_Write: [wreg+status,2+status,0]
+   808     018A  00F4               	movwf	DIO_Write@pins
+   809     018B  0974               	comf	DIO_Write@pins,w
+   810     018C  0505               	andwf	5,w	;volatile
+   811     018D  00F2               	movwf	DIO_Write@u8_temp_reg
+   812     018E  0874               	movf	DIO_Write@pins,w
+   813     018F  0571               	andwf	DIO_Write@value,w
+   814     0190  00F3               	movwf	DIO_Write@u8_masked_pins
+   815     0191  0872               	movf	DIO_Write@u8_temp_reg,w
+   816     0192  0473               	iorwf	DIO_Write@u8_masked_pins,w
+   817     0193  0085               	movwf	5	;volatile
+   818     0194  0008               	return
+   819     0195                     __end_of_DIO_Write:
+   820     007E                     btemp	set	126	;btemp
+   821     007E                     wtemp0	set	126
+   822                           
+   823                           	psect	config
+   824                           
+   825                           ;Config register CONFIG @ 0x2007
+   826                           ;	Oscillator Selection bits
+   827                           ;	FOSC = INTOSCIO, INTOSCIO oscillator: I/O function on GP4/OSC2/CLKOUT pin, I/O functio
+      +                          n on GP5/OSC1/CLKIN
+   828                           ;	Watchdog Timer Enable bit
+   829                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+   830                           ;	Power-up Timer Enable bit
+   831                           ;	PWRTE = OFF, PWRT disabled
+   832                           ;	MCLR Pin Function Select bit
+   833                           ;	MCLRE = OFF, MCLR pin function is digital input, MCLR internally tied to VDD
+   834                           ;	Code Protection bit
+   835                           ;	CP = OFF, Program memory code protection is disabled
+   836                           ;	Internal Oscillator Frequency Select
+   837                           ;	IOSCFS = 8MHZ, 8 MHz
+   838                           ;	Brown-out Reset Selection bits
+   839                           ;	BOREN = OFF, BOR disabled
+   840     2007                     	org	8199
+   841     2007  3CD4               	dw	15572
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           13      7       7
+    BANK0            37      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_DIO_Write
+    _main->_MDIO_stderrSetPinDirection
+    _main->_MDIO_stderrSetPinValue
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 3     3      0    1163
+                                              4 COMMON     3     3      0
+                          _DIO_Write
+             _MADC_voidDisableAllADC
+         _MDIO_stderrSetPinDirection
+             _MDIO_stderrSetPinValue
+ ---------------------------------------------------------------------------------
+ (1) _MDIO_stderrSetPinValue                               5     4      1     487
+                                              0 COMMON     4     3      1
+ ---------------------------------------------------------------------------------
+ (1) _MDIO_stderrSetPinDirection                           5     4      1     488
+                                              0 COMMON     4     3      1
+ ---------------------------------------------------------------------------------
+ (1) _MADC_voidDisableAllADC                               0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _DIO_Write                                            4     3      1     188
+                                              0 COMMON     4     3      1
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _DIO_Write
+   _MADC_voidDisableAllADC
+   _MDIO_stderrSetPinDirection
+   _MDIO_stderrSetPinValue
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            D      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               D      7       7       1       53.8%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+BITBANK0            25      0       0       3        0.0%
+BANK0               25      0       0       4        0.0%
+ABS                  0      0       0       5        0.0%
+DATA                 0      0       0       6        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.41 build 20230208172133 
+Symbol Table                                                                                   Sun Sep 03 03:52:09 2023
+
+                                   l5 0205                                     l7 0208  
+                                   l8 020B                                     l9 020E  
+                                  l10 0211                                    l11 0214  
+                                  l12 0217                                    l30 019E  
+                                  l31 01A1                                    l32 01A4  
+                                  l33 01A7                                    l34 01AA  
+                                  l28 019B                                    u97 02B6  
+                                 l941 0244                                   l933 0238  
+                                 l927 0218                                   l945 024A  
+                                 l937 023E                                   l929 0234  
+                                 l955 0256                                   l949 0250  
+                                 l993 01C8                                   l987 01AB  
+                                 l997 01CE                                   l989 01C4  
+                                 u107 02C6                                   u117 02D6  
+                                 u127 02E6                                   u137 02F6  
+                                l1001 01D4                                  l1005 01DA  
+                                l1015 01E6                                  l1009 01E0  
+                                l1221 0220                                  l1223 025E  
+                                l1217 01B3                                  l1219 01EE  
+                                l1069 02A1                  DIO_Write@u8_temp_reg 0072  
+                                _main 0270                                  btemp 007E  
+      __end_of_MDIO_stderrSetPinValue 0200                                  start 0001  
+                               ?_main 0071                         DIO_Write@pins 0074  
+                               status 0003                                 wtemp0 007E  
+                     __initialization 02FE                          __end_of_main 02FE  
+                              ??_main 0075                     __end_of_DIO_Write 0195  
+                      DIO_Write@value 0071                _MADC_voidDisableAllADC 0187  
+         ?_MDIO_stderrSetPinDirection 0071               __end_of__initialization 02FE  
+             DIO_Write@u8_masked_pins 0073     MDIO_stderrSetPinValue@ARG_u8Value 0071  
+                      __pcstackCOMMON 0071    MDIO_stderrSetPinDirection@ARG_Mode 0071  
+                          __pmaintext 0270                               __ptext1 0195  
+                             __ptext2 0200                               __ptext3 0187  
+                             __ptext4 018A                             _DIO_Write 018A  
+                end_of_initialization 02FE               ?_MADC_voidDisableAllADC 0071  
+                          ?_DIO_Write 0071              ??_MDIO_stderrSetPinValue 0072  
+      __end_of_MADC_voidDisableAllADC 018A                   start_initialization 02FE  
+                           ___latbits 0000                           ??_DIO_Write 0072  
+    MDIO_stderrSetPinValue@ARG_udtPin 0074                _MDIO_stderrSetPinValue 0195  
+        ??_MDIO_stderrSetPinDirection 0072  MDIO_stderrSetPinDirection@ARG_udtPin 0074  
+            ??_MADC_voidDisableAllADC 0071    __end_of_MDIO_stderrSetPinDirection 0270  
+          _MDIO_stderrSetPinDirection 0200               ?_MDIO_stderrSetPinValue 0071  

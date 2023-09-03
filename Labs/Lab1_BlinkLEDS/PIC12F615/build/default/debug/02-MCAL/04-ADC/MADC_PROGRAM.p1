@@ -1,0 +1,27 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"56 01-LIB\LSTD_TYPES.h
+[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2 . B0 B1 B2 B3 B4 B5 B6 B7 ]
+"53
+[u S1 `Vuc 1 `S2 1 ]
+[n S1 . All_REG BIT ]
+"20 02-MCAL/04-ADC/MADC_PROGRAM.c
+[v _MADC_voidEnableAllADC `(v ~T0 @X0 1 ef ]
+"21
+{
+[e :U _MADC_voidEnableAllADC ]
+[f ]
+"26
+[e :UE 3 ]
+}
+"28
+[v _MADC_voidDisableAllADC `(v ~T0 @X0 1 ef ]
+"29
+{
+[e :U _MADC_voidDisableAllADC ]
+[f ]
+"30
+[e = . *U -> -> 159 `i `*S1 0 -> -> 0 `i `uc ]
+"31
+[e :UE 4 ]
+}
